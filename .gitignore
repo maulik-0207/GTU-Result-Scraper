@@ -214,4 +214,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Excel output files (scraped data)
+*.xlsx
+*.xls
 gtu_results.xlsx
