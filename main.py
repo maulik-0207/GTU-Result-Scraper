@@ -543,9 +543,18 @@ class GTUResultsScraperGUI:
                     enrollment_number = self.driver.find_element(By.ID, "lblExam").text.strip()
                     current_sem_back = self.driver.find_element(By.ID, "lblCUPBack").text.strip()
                     total_back = self.driver.find_element(By.ID, "lblTotalBack").text.strip()
-                    spi = self.driver.find_element(By.ID, "lblSPI").text.strip()
-                    cpi = self.driver.find_element(By.ID, "lblCPI").text.strip()
-                    cgpa = self.driver.find_element(By.ID, "lblCGPA").text.strip()
+                    try:
+                        spi = self.driver.find_element(By.ID, "lblSPI").text.strip()
+                    except:
+                        spi = "0"
+                    try:
+                        cpi = self.driver.find_element(By.ID, "lblCPI").text.strip()
+                    except:
+                        cpi = "0"
+                    try:
+                        cgpa = self.driver.find_element(By.ID, "lblCGPA").text.strip()
+                    except:
+                        cgpa = "0"
                     
                     # Save to Excel
                     self.save_to_excel(name, enrollment_number, current_sem_back, 
